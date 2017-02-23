@@ -1,0 +1,50 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{parskip}
+\parskip=2\baselineskip \advance\parskip by 0pt plus 1pt
+ 
+\usepackage[pdfpagelabels]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=red,
+}
+ 
+\urlstyle{same}
+ 
+\begin{document}
+
+{\let\cleardoublep\usepackage{amsmath}
+age\clearpage 
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.75\textwidth]{graphics/joke_image.jpg}\par\vspace{1cm}
+	\vspace{2cm}
+	{\huge\bfseries ADDIE User Manual\par}
+	{\LARGE\bfseries\itshape ADvanced DIffraction Environment\par}
+	\vspace{1cm}
+	{\Large\bfseries\ Data reduction software for NOMAD\par}
+	\vfill
+	{\large\bfseries \today{} version \par}
+\end{titlepage}
+ 
+
+ \tableofcontents
+ \addtocontents{toc}{~\hfill\textbf{Page}\par}
+
+}
+
+\begin{equation}
+\label{eq:1}
+\sum_{i=0}^{\infty} a_i x^i
+\end{equation}
+
+\input{chapters/intro} 
+\input{chapters/gettingstarted}
+\input{chapters/workflow}
+
+\end{document}

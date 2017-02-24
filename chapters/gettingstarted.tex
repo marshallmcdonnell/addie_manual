@@ -1,13 +1,74 @@
 \chapter{Getting Started}
 \section{Background}
 
-This is what you are trying to do:
+What does ADDIE actually do during data reduction? For each run, we must have the following measurements for data reduction:
 
-
-
-\begin{equation} \label{eq_intensity}
+\begin{equation} \label{eq_intensities}
 \begin{split}
-I & = \frac{(S - S_B)-\alpha (C-C_B)}{(V-V_B)} 
+I_{sample}  & = \text{sample intensity} \\
+I_{C}  & = \text{sample container intensity} \\
+I_{Cb} & = \text{container background intensity} \\
+I_{V}  & = \text{vanadium intensity} \\
+I_{Vb} & = \text{vanadium background intensity} 
 \end{split}
 \end{equation}
 
+Why all these measurements for a single run? We want to measure only the coherent sample scattering ($I_{sample}^{coh}$). Unfortunately, we cannot suspend the sample in space inside the instrument. We must have a sample container. Thus, we measure the empty sample container intensity ($I_{C}$) in the instrument to subtract this from the sample scattering intensity ($I_{sample}$). Yet, we can have many different types of "containers" (i.e. sample environments such as a furnace or cryostat, vanadium cans, quartz tubes, tubes in cans, etc.) Therefore, we must correct "from the outside in" where we subtract a completely empty instrument from the outermost containment scattering intensity, then subtract this from the next layer of containment and continue till we reach the sample subtracted ($I_{sample}$) from this collective background ($I_{C} + I_{Cb}$).  Also, we do not know the exact beam profile to put the sample scattering intensity on an absolute scale. For this, we use vanadium to normalize the sample scattering intensity to extract the coherent scattering ($I_{sample}^{coh}$) from the incoherent scattering ($I_{sample}^{inc}$) on an absolute scale. 
+
+Why vanadium for normalization? We use vanadium for a few different reasons. 1) Vanadium has a small coherent scattering length but is a great incoherent scattering material. Thus, it does not contain large Bragg reflections in its profile that would have to be removed but provides a well-defined total beam profile. 2) Vanadium is a solid metal with well known density and stable without a container. 3) The large mass of vanadium atoms reduces the need to correct for inelastic scattering effects.
+
+What else before we get our coherent sample intensity? Last, we must take into account the loss of intensity of the neutron beam as it passes through every material present in the experiment. To some degree, the sample, container, and vanadium will all attenuate the neutron beam. Ignoring the sample attenuation, we have: 
+
+\begin{equation} \label{eq_reduction}
+\begin{split}
+I_{sample}^{coh} & = \frac{I_{sample}-\alpha_c (I_{C}-I_{Cb})}{\alpha_v(I_{V}-I_{Vb})}  
+\end{split}
+\end{equation}
+
+From the coherent scattering, we have the total scattering structure function given as:
+
+\begin{equation} \label{eq_reduction}
+\begin{split}
+S(Q) - 1 & = \frac {\frac{I_{sample}^{coh}}{N} - \langle b^2 \rangle }{{{\langle b \rangle}^2 }} \\
+         & = \frac {\frac{d \sigma}{d \Omega}  - \langle b^2 \rangle }{{{\langle b \rangle}^2 }} \\
+         & = 
+\end{split}
+\end{equation}
+
+where ${\langle b \rangle}^2$ and $\langle b^2 \rangle$ are the squared average and average squared scattering power of the sample where:
+
+\begin{equation} \label{eq_reduction}
+\begin{split}
+\langle b \rangle = \frac {\sum_{i}^{N} b_{i}}{N}
+\end{split}
+\end{equation}
+
+
+where $b_i$ is the scattering power of atom $i$ and $N$ is the total number of atoms in the sample.
+
+The pair distribution function (PDF) is obtained from the Fourier transform of $S(Q)-1$:
+
+\begin{equation} \label{eq_reduction}
+\begin{split}
+G(r) = \frac{2}{\pi} \int_{\inf}^{0} Q [S(Q)-1] \text{sin}(Qr) dQ
+\end{split}
+\end{equation}
+
+\section{Specifics of NOMAD data reduction}
+
+To obtain $S(Q)$ we using the following:
+
+\begin{equation} \label{eq_reduction}
+\begin{split}
+S(Q) - 1 = \frac{\frac{I_{sample}^{coh}}{N} - I_{poly}}{I_poly}
+\end{split}
+\end{equation}
+
+where 
+\begin{equation} \label{eq_reduction}
+I_{poly} = \begin{cases} 
+      		\frac{\rho \sigma \}{} & x\leq 0 \\
+      		\frac{100-x}{100} & 0\leq x\leq 100 \\
+      		0 & 100\leq x 
+		 \end{cases}
+\end{equation}

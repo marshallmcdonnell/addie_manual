@@ -3,6 +3,7 @@
 
 What does ADDIE actually do during data reduction? For each run, we must have the following measurements for data reduction:
 
+
 \begin{equation} \label{eq_intensities}
 \begin{split}
 I_{sample}  & = \text{sample intensity} \\
@@ -64,11 +65,23 @@ S(Q) - 1 = \frac{\frac{I_{sample}^{coh}}{N} - I_{poly}}{I_poly}
 \end{split}
 \end{equation}
 
+
 where 
-\begin{equation} \label{eq_reduction}
-I_{poly} = \begin{cases} 
-      		\frac{\rho \sigma \}{} & x\leq 0 \\
-      		\frac{100-x}{100} & 0\leq x\leq 100 \\
-      		0 & 100\leq x 
-		 \end{cases}
-\end{equation}
+\begin{equation*} \label{eq_reduction}
+I_{poly} = 
+	\renewcommand{\arraystretch}{1.2}
+    \left\{\begin{array}{l @{\quad} l l l}
+
+      		\frac{\rho \sigma d^2}{\rho_v \sigma_v d^2_v} & hyd = -1 & \text{absolute normalization} \\ 
+      		{}                                            & {}       & \text{requires knowledge of sample properties} \\
+      		{}                                            &          & \text{not done in autoreduction} \\
+      		a_0 + a_1 q + ... a_nq^n                      & hyd = 0  & \text{least-square polynomial fit} \\
+      		{}                                            & {}       & \text{of q-region qminpla $<$ Q $<$ qmaxpla} \\
+      		xL(q_0) + (1-x) G(q_0)                        & hyd = 2  & \text{non-linear least square fit to
+pseudo-Voigt function.} \\
+			{}											  & {}       & \text{$L(q)$ = Lorenztian, $G(q)$ = Gaussian } \\
+      		{}                                            & {}       & \text{Used for samples containing hydrogen or deuterium} \\
+	\end{array}\right.
+\end{equation*}		
+
+ 

@@ -1,5 +1,5 @@
 \chapter{Getting Started}
-\section{Background}
+\section{Background} \label{sec_background}
 
 What does ADDIE actually do during data reduction? For each run, we must have the following measurements for data reduction:
 
@@ -28,7 +28,7 @@ I_{sample}^{coh} & = \frac{I_{sample}-\alpha_c (I_{C}-I_{Cb})}{\alpha_v(I_{V}-I_
 
 From the coherent scattering, we have the total scattering structure function given as:
 
-\begin{equation} \label{eq_reduction}
+\begin{equation} \label{eq_SofQ}
 \begin{split}
 S(Q) - 1 & = \frac {\frac{I_{sample}^{coh}}{N} - \langle b^2 \rangle }{{{\langle b \rangle}^2 }} \\
          & = \frac {\frac{d \sigma}{d \Omega}  - \langle b^2 \rangle }{{{\langle b \rangle}^2 }} \\
@@ -38,7 +38,7 @@ S(Q) - 1 & = \frac {\frac{I_{sample}^{coh}}{N} - \langle b^2 \rangle }{{{\langle
 
 where ${\langle b \rangle}^2$ and $\langle b^2 \rangle$ are the squared average and average squared scattering power of the sample where:
 
-\begin{equation} \label{eq_reduction}
+\begin{equation} \label{eq_scattering_power}
 \begin{split}
 \langle b \rangle = \frac {\sum_{i}^{N} b_{i}}{N}
 \end{split}
@@ -49,7 +49,7 @@ where $b_i$ is the scattering power of atom $i$ and $N$ is the total number of a
 
 The pair distribution function (PDF) is obtained from the Fourier transform of $S(Q)-1$:
 
-\begin{equation} \label{eq_reduction}
+\begin{equation} \label{eq_GofR}
 \begin{split}
 G(r) = \frac{2}{\pi} \int_{\inf}^{0} Q [S(Q)-1] \text{sin}(Qr) dQ
 \end{split}
@@ -59,7 +59,7 @@ G(r) = \frac{2}{\pi} \int_{\inf}^{0} Q [S(Q)-1] \text{sin}(Qr) dQ
 
 To obtain $S(Q)$ we using the following:
 
-\begin{equation} \label{eq_reduction}
+\begin{equation} \label{eq_nomad_SofQ}
 \begin{split}
 S(Q) - 1 = \frac{\frac{I_{sample}^{coh}}{N} - I_{poly}}{I_poly}
 \end{split}
@@ -67,7 +67,7 @@ S(Q) - 1 = \frac{\frac{I_{sample}^{coh}}{N} - I_{poly}}{I_poly}
 
 
 where 
-\begin{equation*} \label{eq_reduction}
+\begin{equation*} \label{eq_nomad_Ipoly}
 I_{poly} = 
 	\renewcommand{\arraystretch}{1.2}
     \left\{\begin{array}{l @{\quad} l l l}

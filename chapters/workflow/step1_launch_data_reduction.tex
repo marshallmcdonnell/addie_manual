@@ -114,6 +114,49 @@ If, at any time, you need to stop the data reduction, you can press the \guicmd{
 If the \guicmd{Run autoNOM script} button is greyed out and you cannot select it, something is missing from the data reduction setup. Press the question mark button located beside the \guicmd{Run autoNOM script} button and you will be shown what is missing in the pop-up Button Status window. Below, we have forgot the Diamond background:
 
   \noindent\makebox[\textwidth]{\includegraphics[width=0.9\paperwidth]{graphics/tab1/tab1_runAutoNOM_questionMark.png}}
+  
+\subsection{The directory structure}
+
+When the data reduction is begun (and if the autotemplate options was chosen), the \fileio{autoNOM} directory will have the following directories with the described datasets:
+
+
+
+ 
+ \begin{tabular} {|| p{3cm} | p{12cm} |} 
+ \hline
+ Directory & Contents  \\ [0.5ex] 
+ \hline\hline
+ all\_files & The generated IDL readable data files for individual scan number.  Users will not typically interact with “all” files. \\ 
+ \hline
+ binfiles & The IDL processing finle for generating Bragg and PDF data from “all” files.  Users will not typically interact with binfiles.
+ \\
+ \hline
+ diagnostics & Diagnostics for the calibration performed.   Plots of various data quality metrics are provided.
+\\
+ \hline
+ figs & A "scratch" place for the User to place various saved figures. \\
+ \hline
+ gofr & Contains small g(r), utilized by liquids and glass community. \\
+ \hline
+ GSAS & Contains diffraction patterns in GSAS (*.gsa)) and PDFgetN (*.getN) readable formats for the 6 default detector arrays of NOMAD. \\
+ \hline
+  fullprof & Contains diffraction patterns in Fullprof (*.dat) readable format for the 6 default detector arrays of NOMAD. \\
+ logs & Logbook files for each process launched. Mainly used for debugging. Users will not typically interact with Logbooks.  \\
+ \hline
+ PDF & Contains G(r) or PDF of your samples,  in PDFgui format (*.gr)  \\
+ \hline
+ rietveld & Contains diffraction patterns in TOPAS (*.xye) and Fullprof (*.dat) readable formats for the 6 default detector arrays of NOMAD. Produced by Mantid instead of autoNOM if launched from \guicmd{Rietveld} sub-tab in \guicmd{Post-Processing} tab. \\
+ \hline
+ SofQ & ASCII file of S(Q)-1 \\
+ \hline
+ sumfiles & A "scratch" directory for the User to place summed files \\
+ \hline
+ topas & Contains diffraction patterns in TOPAS (*.xye) readable format for the 6 default detector arrays of NOMAD. \\ [1ex]
+ \hline
+\end{tabular} \label{table_directory_struct}
+
+
+
 
 \subsection{Getting files from another IPTS}
 

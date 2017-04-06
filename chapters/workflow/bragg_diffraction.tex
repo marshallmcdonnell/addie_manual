@@ -12,7 +12,7 @@ First we need to load in diffraction data. Go to the top right and press the \gu
 
 \noindent\makebox[\textwidth]{\includegraphics[width=0.9\paperwidth]{graphics/tab3/tab3_loadFiles.png}}
 
-Double-click the \fileio{GSAS} diretory to see the files that are available. When you press \guicmd{Load}, you may actually start in the \fileio{GSAS} directory as well. From here, you can select individual runs, labeled as \fileio{NOM<run number>tof.gsa} or you can select post-processed runs such as summed files, labeled as \fileio{NOM\_<given title>.gsa} or sometimes as \fileio{NOM\_9999\_<given title>.gsa}.  An example is displayed below:
+Double-click the \fileio{GSAS} diretory to see the files that are available. When you press \guicmd{Load}, you may actually start in the \fileio{GSAS} directory as well. From here, you can select individual runs, labeled as \fileio{NOM<run number>tof.gsa} or you can select post-processed runs such as summed files, labeled as \fileio{NOM\_<given title>.gsa}.  An example is displayed below:
 
 \noindent\makebox[\textwidth]{\includegraphics[width=0.9\paperwidth]{graphics/tab3/tab3_loadFiles_showIndiviuals.png}}
 
@@ -38,7 +38,7 @@ In Figure \ref{fig_multiBraggBanks}, we are in \guicmd{Multiple Banks} mode and 
 
 \noindent\makebox[\textwidth]{\includegraphics[width=0.9\paperwidth]{graphics/tab3/tab3_multipleGSAS.png}} \label{fig_multiBraggBanks}
 
-Under the bank and mode selection, we have the \guicmd{Rescale} and \guicmd{Color/Style} buttons. The \guicmd{Rescale} button can be used to rescale the frame to better fit the data if the y-axis spans too far or not enought to capture the data. The \guicmd{Color/Style} button can be used to c\subsection{Standard plot buttons}hange the display of the data in the plot. After pressing the \guicmd{Color/Style} button, we are presented with a file dialog box. We can select the workspace from the drop-down list we would like to change, shown below, and can change the color of the curve, add markers, and select the fill and edge color of the markers from the other drop-downs: 
+Under the bank and mode selection, we have the \guicmd{Rescale} and \guicmd{Color/Style} buttons. The \guicmd{Rescale} button can be used to rescale the frame to better fit the data if the y-axis spans too far or not enought to capture the data. The \guicmd{Color/Style} button can be used to change the display of the data in the plot. After pressing the \guicmd{Color/Style} button, we are presented with a file dialog box. We can select the workspace from the drop-down list we would like to change, shown below, and can change the color of the curve, add markers, and select the fill and edge color of the markers from the other drop-downs: 
 
 \noindent\makebox[\textwidth]{\includegraphics[width=0.9\paperwidth]{graphics/tab3/tab3_colorStyle.png}} 
 
@@ -69,10 +69,12 @@ This will allow you to expand and contract the IPython command line dock. At any
 \noindent\makebox[\textwidth]{\includegraphics[width=0.8\paperwidth]{graphics/tab3/tab3_rightClick_toIPython_unDock.png}}
 
 \item \guicmd{Merge to GSAS}: Will give a merged GSAS output file of the banks.
-\item \guicmd{Remove from plotting}: Removes dataset from plot.
+\item \guicmd{Remove from plotting}: Removes dataset from the plot.
 \item \guicmd{Delete workspace}: Deletes the dataset from the \guicmd{Bragg Workspaces} tree.
 
 \end{itemize}
+
+To change the legend, in case it is in the way or masking data, you can right-click inside any of the plot areas and either reduce the font of the text, increase the font of the text, or hide the legend all together.
 
 
 
